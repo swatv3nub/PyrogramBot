@@ -26,7 +26,7 @@ async def quoter(_, message):
  
 # Example Of Simple Regex Use From @SupMeta_Bot
 
-@app.on_message(filters.regex(["(.?)f"]))
+@app.on_message(filters.regex(["(?i)f"]))
 async def f(_, message):
     if (len(message.text) != 1):
         return
