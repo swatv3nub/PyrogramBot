@@ -1,0 +1,10 @@
+TgCrypto
+aiohttp
+pyrogram
+python-dateutil
+pyjokes
+quoters
+psutil
+pykeyboard
+#motor
+dnspython

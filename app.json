@@ -1,0 +1,44 @@
+{
+  "name": "PyrogramBot",
+  "description": "Bot written in Python using the Pyrogram Library - Sample",
+  "keywords": [
+    "telegram",
+    "python",
+    "pyrogram"
+  ],
+  "repository": "https://github.com/swatv3nub/PyrogramBot",
+  "success_url": "https://telegram.dog/ProjectHackfreaks",
+  "website": "https://github.com/swatv3nub",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+      "value": "ANYTHING"
+    },
+    "API_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Get this value from @BotFather"
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your ID",
+      "required": true
+    }
+  },
+  "buildpacks": [
+  {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}

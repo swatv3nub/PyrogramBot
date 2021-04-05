@@ -1,0 +1,36 @@
+from PyrogramBot import db
+from typing import List
+
+
+chatsdb = db.chats
+
+
+async def is_in_chat(chat_id: int) -> bool:
+    chat = await chatsdb.find_one({"chat_id": chat_id})
+    if not chat:
+        return False
+    return True
+
+
+async def get_in_chats() -> list:
+    chats = chatsdb.find({"chat_id": {'$lt': 0}})
+    if not chats:
+        return []
+    chats_list = []
+    for chat in await chats.to_list(length=1000000000):
+        chats_list.append(chat)
+    return chats_list
+
+
+async def add_in_chat(chat_id: int):
+    is_in = await is_in_chat(chat_id)
+    if is_in:
+        return
+    return await chatsdb.insert_one({"chat_id": chat_id})
+
+
+async def remove_in_chat(chat_id: int):
+    is_in = await is_in_chat(chat_id)
+    if not is_in:
+        return
+    return await chatsdb.delete_one({"chat_id": chat_id})
