@@ -10,6 +10,8 @@ from .config import API_ID, API_HASH, BOT_TOKEN
 
 # from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 
+LOAD_MODULES = []
+NOLOAD_MODULES = []
 StartTime = time.time()
 logging.basicConfig(level=logging.INFO)
 
